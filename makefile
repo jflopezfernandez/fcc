@@ -9,10 +9,13 @@ LFLAGS :=
 
 all: fcc.exe
 
-fcc.exe: fcc.o
-	$(CC) $(CFLAGS) $(LFLAGS) -o $@ $<
+fcc.exe: fcc.o args.o 
+	$(CC) $(CFLAGS) $(LFLAGS) -o $@ $^
 
 fcc.o: fcc.c
+	$(CC) $(CFLAGS) -c -o $@ $^
+
+args.o: args.c
 	$(CC) $(CFLAGS) -c -o $@ $^
 
 clean:
