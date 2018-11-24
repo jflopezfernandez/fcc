@@ -4,7 +4,7 @@ vpath %.c src
 
 CC := gcc
 
-CFLAGS := -I include -Wall -Wextra -pedantic
+CFLAGS := -I include -Wall -Wextra -pedantic-errors
 LFLAGS :=
 
 all: fcc.exe

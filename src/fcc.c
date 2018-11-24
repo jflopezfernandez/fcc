@@ -4,13 +4,12 @@
 
 int main(int argc, char *argv[])
 {
-    int numberOfOptions = processOptions(argc, argv);
+    validateUserArguments(argc, argv);
 
-    if (!numberOfOptions) {
-        // User did not specify files to compile
-        fprintf(stderr, "<You must specify files to compile>\n");
-
-        return EXIT_SUCCESS;
+    for (size_t i = 1; i < (size_t) argc; i++) {
+        for (size_t j = 0; j < strlen(argv[i]); j++) {
+            printf("%c ", (char) *(argv[i] + j));
+        }
     }
 
     return EXIT_SUCCESS;
